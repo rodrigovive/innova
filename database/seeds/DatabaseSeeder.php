@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $role ->display_name = 'user admin';
         $role ->description = 'admin';
         $role ->save();
-        
+
         // $role = ['name' => 'admin', 'display_name' => 'Admin', 'description' => 'Full Permission'];
         // $role = Role::create($role);
         //DB::table('roles')->insert($role);
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
             $role->attachPermission($value);
         }
         //3) Create Admin User
-        $user = ['name' => 'Admin User', 'email' => 'adminuser@test.com', 'password' => Hash::make('adminpwd')];
+        $user = ['name' => 'Admin User', 'email' => 'admin@gmail.com', 'password' => Hash::make('123456')];
         $user = User::create($user);
         //4) Set User Role
         $user->attachRole($role);
